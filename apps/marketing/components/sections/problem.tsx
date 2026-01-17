@@ -8,21 +8,21 @@ import { TextGenerateWithSelectBoxEffect } from '~/components/fragments/text-gen
 const DATA = [
   {
     icon: <UserPlusIcon className="size-5 shrink-0" />,
-    title: 'Problem 1',
+    title: 'Built for Your Users',
     description:
-      'Describe a significant problem your ideal customer profile has. Explain how this problem impacts their goals or daily operations.'
+      'Clunky software kills productivity. We build fast, intuitive applications that your team and customers will actually love to use.'
   },
   {
     icon: <BarChartIcon className="size-5 shrink-0" />,
-    title: 'Problem 2',
+    title: 'Designed for Growth',
     description:
-      'Describe a significant problem your ideal customer profile has. Explain how this problem impacts their goals or daily operations.'
+      'Scale without the technical headaches. We engineer robust systems that stay fast and reliable as your business reaches new heights.'
   },
   {
     icon: <WorkflowIcon className="size-5 shrink-0" />,
-    title: 'Problem 3',
+    title: 'Seamlessly Connected',
     description:
-      'Describe a significant problem your ideal customer profile has. Explain how this problem impacts their goals or daily operations.'
+      'Stop managing fragmented platforms. We unify your web and mobile presence into one smooth, high-performance digital ecosystem.'
   }
 ];
 
@@ -31,7 +31,7 @@ export function Problem(): React.JSX.Element {
     <GridSection>
       <div className="px-4 py-20 text-center">
         <h2 className="text-3xl font-semibold md:text-5xl">
-          <TextGenerateWithSelectBoxEffect words="Attention Grabbing Title" />
+          <TextGenerateWithSelectBoxEffect words="Bridging the DigitalGap" />
         </h2>
       </div>
       <div className="grid divide-y border-t border-dashed md:grid-cols-3 md:divide-x md:divide-y-0">

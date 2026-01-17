@@ -1,3 +1,5 @@
+import { StoryTimeline } from '@/components/sections/story-timeline';
+import { StoryValues } from '@/components/sections/story-values';
 import * as React from 'react';
 
 import { CTA } from '~/components/sections/cta';
@@ -13,11 +15,13 @@ export default function IndexPage(): React.JSX.Element {
   return (
     <>
       <Hero />
-      <Logos />
+      {/* <Logos /> */}
       <Problem />
-      <Solution />
+      <StoryTimeline />
+      <StoryValues />
+      {/* <Solution />
       <Stats />
-      <Testimonials />
+      <Testimonials /> */}
       <FAQ />
       <CTA />
     </>

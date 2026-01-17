@@ -36,7 +36,7 @@ function HeroPill(): React.JSX.Element {
       transition={{ duration: 0.8 }}
       className="flex items-center justify-center"
     >
-      <Link href="#">
+      <Link href="/contact"> {/* Changed href to point to contact */}
         <Badge
           variant="outline"
           className="group h-8 rounded-full px-3 text-xs font-medium shadow-sm duration-200 hover:bg-accent/50 sm:text-sm"
@@ -48,7 +48,7 @@ function HeroPill(): React.JSX.Element {
             orientation="vertical"
             className="mx-2"
           />
-          Put an announcement here 🎉
+          Now accepting new development projects
           <ChevronRightIcon className="ml-1.5 size-3 shrink-0 text-foreground transition-transform group-hover:translate-x-0.5" />
         </Badge>
       </Link>
@@ -64,8 +64,8 @@ function HeroTitle(): React.JSX.Element {
       transition={{ delay: 0.2, duration: 0.4 }}
     >
       <h1 className="mt-6 text-center text-[48px] font-bold leading-[54px] tracking-[-1.2px] [font-kerning:none] sm:text-[56px] md:text-[64px] lg:text-[76px] lg:leading-[74px] lg:tracking-[-2px]">
-        Your revolutionary
-        <br /> Next.js SaaS
+        Engineering the Future of
+        <br /> Your Digital Ecosystem
       </h1>
     </motion.div>
   );
@@ -79,8 +79,7 @@ function HeroDescription(): React.JSX.Element {
       transition={{ delay: 0.4, duration: 0.4 }}
       className="mx-auto mt-3 max-w-[560px] text-balance text-center text-lg leading-[26px] text-muted-foreground sm:text-xl lg:mt-6"
     >
-      This is a demo application built with Achromatic. It will save you time
-      and effort building your next SaaS.
+      We build high-performance web and mobile applications that turn complex technology into seamless user experiences.
     </motion.p>
   );
 }
@@ -219,35 +218,35 @@ function HeroIllustration(): React.JSX.Element {
               className="mx-1 px-2.5 sm:mx-2 sm:px-3"
             >
               <BoxIcon className="mr-2 size-4 shrink-0" />
-              Feature 1
+              Sample Feature 1
             </UnderlinedTabsTrigger>
             <UnderlinedTabsTrigger
               value="feature2"
               className="mx-1 px-2.5 sm:mx-2 sm:px-3"
             >
               <PlayIcon className="mr-2 size-4 shrink-0" />
-              Feature 2
+              Sample Feature 2
             </UnderlinedTabsTrigger>
             <UnderlinedTabsTrigger
               value="feature3"
               className="mx-1 px-2.5 sm:mx-2 sm:px-3"
             >
               <CircuitBoardIcon className="mr-2 size-4 shrink-0" />
-              Feature 3
+              Sample Feature 3
             </UnderlinedTabsTrigger>
             <UnderlinedTabsTrigger
               value="feature4"
               className="mx-1 px-2.5 sm:mx-2 sm:px-3"
             >
               <LayoutIcon className="mr-2 size-4 shrink-0" />
-              Feature 4
+              SampleFeature 4
             </UnderlinedTabsTrigger>
             <UnderlinedTabsTrigger
               value="feature5"
               className="mx-1 px-2.5 sm:mx-2 sm:px-3"
             >
               <FileBarChartIcon className="mr-2 size-4 shrink-0" />
-              Feature 5
+              Sample Feature 5
             </UnderlinedTabsTrigger>
           </UnderlinedTabsList>
           <ScrollBar
@@ -262,7 +261,7 @@ function HeroIllustration(): React.JSX.Element {
               <Image
                 priority
                 quality={100}
-                src="/assets/hero/light-feature1.webp"
+                src="/assets/hero/Feature-1.webp"
                 width="1328"
                 height="727"
                 alt="Feature 1 screenshot"
@@ -271,7 +270,7 @@ function HeroIllustration(): React.JSX.Element {
               <Image
                 priority
                 quality={100}
-                src="/assets/hero/dark-feature1.webp"
+                src="/assets/hero/Feature-1.webp"
                 width="1328"
                 height="727"
                 alt="Feature 1 screenshot"
@@ -281,7 +280,7 @@ function HeroIllustration(): React.JSX.Element {
             <UnderlinedTabsContent value="feature2">
               <Image
                 quality={100}
-                src="/assets/hero/light-feature2.webp"
+                src="/assets/hero/Feature-2.webp"
                 width="1328"
                 height="727"
                 alt="Feature 2 screenshot"
@@ -289,7 +288,7 @@ function HeroIllustration(): React.JSX.Element {
               />
               <Image
                 quality={100}
-                src="/assets/hero/dark-feature2.webp"
+                src="/assets/hero/Feature-2.webp"
                 width="1328"
                 height="727"
                 alt="Feature 2 screenshot"
@@ -299,7 +298,7 @@ function HeroIllustration(): React.JSX.Element {
             <UnderlinedTabsContent value="feature3">
               <Image
                 quality={100}
-                src="/assets/hero/light-feature3.webp"
+                src="/assets/hero/Feature-3.webp"
                 width="1328"
                 height="727"
                 alt="Feature 3 screenshot"
@@ -307,7 +306,7 @@ function HeroIllustration(): React.JSX.Element {
               />
               <Image
                 quality={100}
-                src="/assets/hero/dark-feature3.webp"
+                src="/assets/hero/Feature-3.webp"
                 width="1328"
                 height="727"
                 alt="Feature 3 screenshot"
@@ -317,7 +316,7 @@ function HeroIllustration(): React.JSX.Element {
             <UnderlinedTabsContent value="feature4">
               <Image
                 quality={100}
-                src="/assets/hero/light-feature4.webp"
+                src="/assets/hero/Feature-4.webp"
                 width="1328"
                 height="727"
                 alt="Feature 4 screenshot"
@@ -325,7 +324,7 @@ function HeroIllustration(): React.JSX.Element {
               />
               <Image
                 quality={100}
-                src="/assets/hero/dark-feature4.webp"
+                src="/assets/hero/Feature-4.webp"
                 width="1328"
                 height="727"
                 alt="Feature 4 screenshot"
@@ -335,7 +334,7 @@ function HeroIllustration(): React.JSX.Element {
             <UnderlinedTabsContent value="feature5">
               <Image
                 quality={100}
-                src="/assets/hero/light-feature5.webp"
+                src="/assets/hero/Feature-5.webp"
                 width="1328"
                 height="727"
                 alt="Feature 5 screenshot"
@@ -343,7 +342,7 @@ function HeroIllustration(): React.JSX.Element {
               />
               <Image
                 quality={100}
-                src="/assets/hero/dark-feature5.webp"
+                src="/assets/hero/Feature-5.webp"
                 width="1328"
                 height="727"
                 alt="Feature 5 screenshot"
