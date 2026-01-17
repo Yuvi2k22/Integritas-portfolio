@@ -75,21 +75,18 @@ export default function ProfileCard({
 
                 {/* User Info */}
                 {showUserInfo && (
-                    <div className="space-y-2 text-center">
-                        <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-50">
+                    <div className="flex flex-col items-center space-y-0.5 text-center w-full px-1">
+                        <h3 className="w-full text-[15px] font-bold text-neutral-900 dark:text-neutral-50 leading-tight">
                             {name}
                         </h3>
-                        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                        <p className="w-full text-[11px] font-medium text-neutral-500 dark:text-neutral-400 capitalize leading-tight">
                             {title}
-                        </p>
-                        <p className="text-xs text-neutral-500 dark:text-neutral-500">
-                            @{handle}
                         </p>
                     </div>
                 )}
 
                 {/* Contact Button */}
-                {contactText && (
+                {contactText && contactText.trim() !== "" && (
                     <button
                         onClick={onContactClick}
                         className="mt-4 w-full rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"

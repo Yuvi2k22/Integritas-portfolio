@@ -1,3 +1,6 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import PricingCard from "@/components/PricingCard";
 
 
@@ -6,18 +9,42 @@ export default function PricingPage() {
     <main className="min-h-screen bg-background text-foreground px-6 py-20">
 
       {/* Header */}
-      <section className="max-w-5xl mx-auto text-center mb-20">
-        <p className="text-sm tracking-widest text-gray-400 uppercase">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="max-w-5xl mx-auto text-center mb-20 relative"
+      >
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-primary/10 blur-[100px] -z-10 rounded-full pointer-events-none" />
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="text-sm tracking-widest text-primary font-semibold uppercase mb-4"
+        >
           Pricing
-        </p>
-        <h1 className="text-4xl md:text-5xl font-bold mt-4">
+        </motion.p>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="text-4xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-br from-foreground to-muted-foreground bg-clip-text text-transparent pb-2"
+        >
           Choose the right engagement
-        </h1>
-        <p className="mt-6 text-gray-400 max-w-2xl mx-auto">
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+        >
           We don’t lock you into payments.
           Pick a plan, talk to us, and we’ll tailor it exactly to your needs.
-        </p>
-      </section>
+        </motion.p>
+      </motion.section>
 
       {/* Pricing Cards */}
       <section className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">

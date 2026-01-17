@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { CheckIcon } from 'lucide-react';
-import { Button } from '@workspace/ui/components/button';
+import { Button, buttonVariants } from '@workspace/ui/components/button';
 import { cn } from '@workspace/ui/lib/utils';
 
 interface PricingCardProps {
@@ -48,10 +48,13 @@ export default function PricingCard({
 
             <Button
                 asChild
-                variant={highlight ? 'default' : 'outline'}
-                className="w-full rounded-xl py-6 font-semibold hover:bg-primary "
+
             >
-                <Link href={href}>{cta}</Link>
+                <Link className={cn(
+                    buttonVariants({ variant: 'outline' }),
+                    'group mt-auto h-11 w-full rounded-xl border-2 border-primary/20 text-sm font-medium shadow-none transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:shadow-lg hover:shadow-primary/20'
+                )}
+                    href={href}>{cta}</Link>
             </Button>
         </div>
     );
