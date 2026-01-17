@@ -73,7 +73,7 @@ const Button = React.forwardRef<ButtonElement, ButtonProps>(
             </span>
           </>
         ) : (
-          <>{children}</>
+          children
         )}
       </Comp>
     );

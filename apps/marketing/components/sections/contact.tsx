@@ -14,8 +14,7 @@ import { Textarea } from '@workspace/ui/components/textarea';
 import { GridSection } from '~/components/fragments/grid-section';
 import { SiteHeading } from '~/components/fragments/site-heading';
 
-// Test email for development
-const TEST_EMAIL = 'vijaykrishnakanthk@gmail.com';
+
 
 export function Contact(): React.JSX.Element {
   const [isVisible, setIsVisible] = useState(false);
@@ -55,26 +54,29 @@ export function Contact(): React.JSX.Element {
       return;
     }
 
+    if (formData.message.length < 10) {
+      toast.error('Message must be at least 10 characters.');
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      // Create mailto link for testing
-      const subject = encodeURIComponent(`Contact from ${formData.firstName} ${formData.lastName}`);
-      const body = encodeURIComponent(
-        `Name: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-      );
+      const { submitContactForm } = await import('~/app/actions/contact');
+      const result = await submitContactForm(formData);
 
-      // Open email client with pre-filled content
-      window.location.href = `mailto:${TEST_EMAIL}?subject=${subject}&body=${body}`;
+      if (result.success) {
+        setIsSubmitted(true);
+        toast.success('Message sent successfully! We\'ll get back to you soon.');
 
-      setIsSubmitted(true);
-      toast.success('Opening your email client...');
-
-      // Reset form after delay
-      setTimeout(() => {
-        setFormData({ firstName: '', lastName: '', email: '', message: '' });
-        setIsSubmitted(false);
-      }, 3000);
+        // Reset form after delay
+        setTimeout(() => {
+          setFormData({ firstName: '', lastName: '', email: '', message: '' });
+          setIsSubmitted(false);
+        }, 3000);
+      } else {
+        toast.error(result.error || 'Something went wrong. Please try again.');
+      }
     } catch (error) {
       toast.error('Something went wrong. Please try again.');
     } finally {
@@ -134,7 +136,7 @@ export function Contact(): React.JSX.Element {
                 <div className="flex flex-col items-center gap-4 lg:items-start">
                   <ContactInfo
                     icon={MailIcon}
-                    text={TEST_EMAIL}
+                    text="vijaykrishnakanthk@gmail.com"
                     delay={400}
                     isVisible={isVisible}
                   />

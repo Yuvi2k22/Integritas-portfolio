@@ -16,6 +16,11 @@ export async function resolveMailer(): Promise<Mailer> {
       const importedModule = await import('./resend');
       return new importedModule.ResendMailer();
     }
+
+    if (mailer === 'console') {
+      const importedModule = await import('./console');
+      return new importedModule.ConsoleMailer();
+    }
   }
 
   // Default to node mailer
