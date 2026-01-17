@@ -100,13 +100,13 @@ function FreeTierCard(): React.JSX.Element {
         </ul>
       </div>
       <Link
-        href={routes.dashboard.auth.SignUp}
+        href={routes.marketing.Contact}
         className={cn(
           buttonVariants({ variant: 'outline' }),
           'group mt-auto h-11 w-full rounded-xl text-sm font-medium shadow-none transition-colors duration-200'
         )}
       >
-        Start Free
+        Contact Us
         <ChevronRightIcon className="ml-1 size-4 transition-transform group-hover:translate-x-0.5" />
       </Link>
     </div>
@@ -150,13 +150,13 @@ function ProTierCard(): React.JSX.Element {
         </ul>
       </div>
       <Link
-        href={routes.dashboard.organizations.Index}
+        href={routes.marketing.Contact}
         className={cn(
           buttonVariants({ variant: 'default' }),
           'group mt-auto h-11 w-full rounded-xl text-sm font-medium shadow-none transition-colors duration-200'
         )}
       >
-        Upgrade to Pro
+        Contact Us
         <ChevronRightIcon className="ml-1 size-4 transition-transform group-hover:translate-x-0.5" />
       </Link>
     </div>

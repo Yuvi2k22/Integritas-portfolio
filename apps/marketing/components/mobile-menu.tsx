@@ -130,7 +130,7 @@ function MainMobileMenu({
       <div className="flex size-full flex-col items-start space-y-3 p-4">
         <div className="flex w-full flex-col gap-2">
           <Link
-            href={routes.dashboard.auth.SignUp}
+            href={routes.marketing.Contact}
             className={cn(
               buttonVariants({
                 variant: 'default',
@@ -140,20 +140,7 @@ function MainMobileMenu({
             )}
             onClick={onLinkClicked}
           >
-            Start for free
-          </Link>
-          <Link
-            href={routes.dashboard.auth.SignIn}
-            onClick={onLinkClicked}
-            className={cn(
-              buttonVariants({
-                variant: 'outline',
-                size: 'lg'
-              }),
-              'w-full rounded-xl'
-            )}
-          >
-            Sign in
+            Contact Us
           </Link>
         </div>
         <ul className="w-full">

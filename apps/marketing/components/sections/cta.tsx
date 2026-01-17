@@ -21,10 +21,10 @@ export function CTA(): React.JSX.Element {
           delay={0.6}
         >
           <Link
-            href={routes.dashboard.auth.SignUp}
-            className={cn(buttonVariants({ variant: 'default' }), 'rounded-xl')}
+            href={routes.marketing.Contact}
+            className={cn(buttonVariants({ variant: 'default' }), 'rounded-xl px-10 h-11')}
           >
-            Start for free
+            Contact Us
           </Link>
         </BlurFade>
       </div>

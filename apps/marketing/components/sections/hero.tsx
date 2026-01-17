@@ -102,40 +102,16 @@ function HeroDescription(): React.JSX.Element {
   );
 }
 
-function HeroButtons(): React.JSX.Element {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.6, duration: 0.4 }}
-      className="mx-auto flex w-full flex-col gap-2 px-7 sm:w-auto sm:flex-row sm:px-0"
-    >
-      <Link
-        href={routes.dashboard.auth.SignUp}
-        className={cn(buttonVariants({ variant: 'default' }), 'h-10 rounded-xl sm:h-9')}
-      >
-        Start for free
-      </Link>
-      <Link
-        href={routes.marketing.Contact}
-        className={cn(buttonVariants({ variant: 'outline' }), 'h-10 rounded-xl sm:h-9')}
-      >
-        Talk to sales
-      </Link>
-    </motion.div>
-  );
-}
-
 // --- NEW HEADER COMPONENT ---
 function ServicesHeader(): React.JSX.Element {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.8, duration: 0.4 }}
       className="mt-20 flex flex-col items-center gap-2"
     >
-       <span className="text-xs font-bold uppercase tracking-[0.2em] text-blue-500">
+      <span className="text-xs font-bold uppercase tracking-[0.2em] text-blue-500">
         Expertise
       </span>
       <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
@@ -200,7 +176,7 @@ function HeroIllustration(): React.JSX.Element {
             className="group relative overflow-hidden rounded-2xl border border-border bg-card/50 p-5 text-left transition-all duration-500 hover:border-primary/50 hover:shadow-xl"
           >
             <div className="absolute -right-8 -top-8 size-24 rounded-full bg-primary/5 blur-2xl opacity-0 transition-opacity group-hover:opacity-100" />
-            
+
             <div className="flex items-start gap-4">
               <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-secondary group-hover:bg-primary/10 transition-colors">
                 {service.icon}
@@ -240,11 +216,10 @@ export function Hero(): React.JSX.Element {
           <HeroTitle />
         </div>
         <HeroDescription />
-        <HeroButtons />
-        
+
         {/* New Header placed here */}
         <ServicesHeader />
-        
+
         <HeroIllustration />
       </div>
     </GridSection>

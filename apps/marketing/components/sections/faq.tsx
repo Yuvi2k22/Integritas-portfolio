@@ -14,35 +14,30 @@ import { GridSection } from '~/components/fragments/grid-section';
 
 const DATA = [
   {
-    question: `What does ${APP_NAME} do?`,
-    answer: `This is a demo application built with Achromatic. It will save you time and effort building your next SaaS. Here you would write something like "${APP_NAME} helps you manage customer relationships, organize sales activities and improve service delivery to make your business more efficient and successful."`
+    question: `What makes Integritas different from other agencies?`,
+    answer: `We don't just build software; we architect solutions that scale. Our approach is rooted in deep technical expertise across .NET, Node.js, and Enterprise architectures, ensuring your system performs under pressure and evolves with your business.`
   },
   {
-    question: 'How will this benefit my business?',
-    answer: `By centralizing your customer data and automating tasks, ${APP_NAME} makes it easier to track leads, manage your sales pipeline and collaborate with your team, saving you time and boosting your productivity.`
+    question: 'What is your specialty in backend development?',
+    answer: `Our team specializes in building high-availability backends using .NET Core, Node.js (TypeScript), and Java Spring Boot. We prioritize security, performance, and long-term maintainability for every system we deploy.`
   },
   {
-    question: 'Is my data safe?',
+    question: 'How do you handle cloud migration and management?',
     answer:
-      'Your data security is our top priority. We use advanced encryption and follow industry-standard security measures to keep your information protected and compliant.'
+      'We provide end-to-side cloud solutions specializing in AWS, Microsoft Azure, and Google Cloud. Our expertise includes architecting serverless systems, managing Kubernetes clusters, and optimizing cloud costs.'
   },
   {
-    question: 'What kind of integrations are available?',
-    answer: `${APP_NAME} supports integration with various business tools, including CRMs, email marketing software and collaboration platforms. Connect with Salesforce, HubSpot and more to create a seamless workflow.`
+    question: 'Do you work with emerging AI technologies?',
+    answer: `Absolutely. We help businesses integrate AI and LLMs (Large Language Models) into their products, from initial R&D and prompt engineering to full-scale production deployment and automation.`
   },
   {
-    question: 'How easy is it to onboard my team?',
+    question: 'What kind of support do you provide after launch?',
     answer:
-      'The platform is designed for easy onboarding, with intuitive interfaces and step-by-step guides to help your team get up and running quickly.'
+      'Integritas provides dedicated post-launch support, including proactive monitoring, performance tuning, and 24/7 infrastructure management to ensure your platform stays resilient.'
   },
   {
-    question: 'What types of businesses can use this?',
-    answer: `${APP_NAME} is suitable for businesses of all sizes and industries, from startups to large enterprises, looking to streamline their customer relationship management.`
-  },
-  {
-    question: 'Can I customize this to fit my business needs?',
-    answer:
-      'Absolutely. You can customize workflows, fields and templates to suit the unique needs of your business.'
+    question: 'Can you work with our existing technical team?',
+    answer: `Yes, we often function as a force multiplier for existing teams, bringing niche expertise in specialized backends or cloud architecture to help accelerate your roadmap.`
   }
 ];
 
@@ -55,15 +50,15 @@ export function FAQ(): React.JSX.Element {
             <h2 className="mb-2.5 text-3xl font-semibold md:text-5xl">
               Frequently Asked Questions
             </h2>
-            <p className="mt-6 hidden text-muted-foreground md:block lg:max-w-[75%]">
-              Haven't found what you're looking for? Try{' '}
+            <p className="mt-6 hidden text-muted-foreground md:block lg:max-w-[75%] font-medium">
+              Have complex technical questions or need an architectural review? {' '}
               <Link
                 href={routes.marketing.Contact}
-                className="font-normal text-inherit underline hover:text-foreground"
+                className="font-bold text-primary underline hover:text-foreground underline-offset-4"
               >
-                contacting
+                Connect with our architects
               </Link>{' '}
-              us, we are glad to help.
+              - we thrive on solving tough technical challenges.
             </p>
           </div>
           <div className="mx-auto flex w-full max-w-xl flex-col">

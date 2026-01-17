@@ -14,96 +14,75 @@ import { GridSection } from '~/components/fragments/grid-section';
 
 const DATA = [
   {
-    question: `What pricing plans does ${APP_NAME} offer?`,
+    question: `How does Integritas approach building high-performance systems?`,
     answer: (
       <div>
-        We offer three plans:
-        <br />
-        <ul className="mt-2 list-disc pl-5">
-          <li>
-            <strong>Free:</strong> A starter plan for individuals or small teams
-          </li>
-          <li>
-            <strong>Pro:</strong> Advanced features for growing businesses
-          </li>
-          <li>
-            <strong>Enterprise:</strong> Custom solutions for large
-            organizations
-          </li>
-        </ul>
-        <p className="mt-2">Each plan is designed to scale with your needs.</p>
-      </div>
-    )
-  },
-  {
-    question: "What's included in the Free plan?",
-    answer: (
-      <div>
-        The Free plan is perfect for getting started and includes:
-        <ul className="mt-2 list-disc pl-5">
-          <li>AI Contact Scoring for 100 contacts/month</li>
-          <li>Smart Email Analysis for 1,000 emails/month</li>
-          <li>Access for up to 2 team members</li>
+        We focus on architecting resilient and scalable solutions from day one. Our approach combines:
+        <ul className="mt-2 list-disc pl-5 font-medium">
+          <li><strong>Performance First:</strong> Optimized codebases in .NET and Node.js</li>
+          <li><strong>Cloud-Native:</strong> Leveraging serverless and scalable infra</li>
+          <li><strong>AI Integration:</strong> Practical LLM applications for real-world ROI</li>
         </ul>
       </div>
     )
   },
   {
-    question: 'What features are in the Pro plan?',
+    question: "Which backend technologies do you specialize in?",
     answer: (
       <div>
-        The Pro plan is ideal for growing teams and includes:
+        Our team has deep expertise in building scalable and performant backends using:
         <ul className="mt-2 list-disc pl-5">
-          <li>Unlimited AI Contact Scoring and Email Analysis</li>
-          <li>Advanced Lead Predictions</li>
-          <li>Real-time Sentiment Analysis</li>
-          <li>Up to 120 team members</li>
+          <li><strong>.NET & C#</strong> for enterprise-grade applications</li>
+          <li><strong>Node.js & TypeScript</strong> for modern, fast-paced environments</li>
+          <li><strong>Java & Spring Boot</strong> for high-availability systems</li>
+          <li><strong>Python</strong> for AI, data science, and scripting</li>
         </ul>
       </div>
     )
   },
   {
-    question: 'What does the Enterprise plan offer?',
+    question: 'Which cloud platforms do you support?',
     answer: (
       <div>
-        The Enterprise plan is fully customizable and includes:
+        We are platform-agnostic and provide seamless deployment and management across:
         <ul className="mt-2 list-disc pl-5">
-          <li>AI Contact Scoring and Email Analysis with custom limits</li>
-          <li>Custom AI models for Lead Predictions</li>
-          <li>Advanced storage solutions</li>
-          <li>24/7 Enterprise Support</li>
-          <li>Unlimited team members</li>
+          <li><strong>Amazon Web Services (AWS)</strong> & <strong>Microsoft Azure</strong></li>
+          <li><strong>Google Cloud Platform (GCP)</strong></li>
+          <li><strong>Vercel</strong> for optimized frontend and serverless projects</li>
         </ul>
-        <p className="mt-2">Contact us to discuss your organization's needs.</p>
       </div>
     )
   },
   {
-    question: 'What happens if I upgrade or downgrade my plan?',
+    question: 'Do you offer custom AI solutions?',
     answer: (
       <p>
-        If you upgrade, you'll be charged a prorated amount for the remaining
-        time in your billing cycle. If you downgrade, the changes will take
-        effect at the end of your current billing cycle.
+        Yes. We integrate advanced AI capabilities into your existing workflows,
+        helping you leverage data and automation to outperform the market and
+        disrupt traditional business models.
       </p>
     )
   },
   {
-    question: 'Is there a setup fee?',
+    question: 'How is project pricing determined?',
     answer: (
       <p>
-        No, there are no setup fees. You can start using {APP_NAME} immediately
-        after signing up.
+        Every project is unique. We offer flexible engagement models, including
+        fixed-price contracts for well-defined scopes and dedicated team
+        arrangements for agile, iterative development.
+        <Link href={routes.marketing.Contact} className="ml-1 text-primary hover:underline">
+          Contact us
+        </Link> for a custom quote.
       </p>
     )
   },
   {
-    question: 'What happens if I exceed my plan limits?',
+    question: 'What is your development process?',
     answer: (
       <p>
-        If you exceed your plan limits, you'll receive an alert and can either
-        upgrade to a higher plan or adjust your usage to stay within your
-        current plan.
+        We follow a modern Agile methodology, prioritizing transparent
+        communication and iterative delivery. You'll have direct access to
+        our developers and regular progress updates through our CI/CD pipelines.
       </p>
     )
   }
@@ -118,15 +97,15 @@ export function PricingFAQ(): React.JSX.Element {
             <h2 className="mb-2.5 text-3xl font-semibold md:text-5xl">
               Frequently Asked Questions
             </h2>
-            <p className="mt-6 hidden text-muted-foreground md:block lg:max-w-[75%]">
-              Have questions about our pricing or plans?{' '}
+            <p className="mt-6 hidden text-muted-foreground md:block lg:max-w-[75%] font-medium">
+              Have questions about our technical expertise or custom solutions?{' '}
               <Link
                 href={routes.marketing.Contact}
-                className="font-normal text-inherit underline hover:text-foreground"
+                className="font-semibold text-primary underline hover:text-foreground underline-offset-4"
               >
-                Contact us
+                Contact our team
               </Link>{' '}
-              - we're here to help you find the perfect fit for your needs.
+              - we're here to help you architect the perfect system for your vision.
             </p>
           </div>
           <div className="mx-auto flex w-full max-w-xl flex-col">

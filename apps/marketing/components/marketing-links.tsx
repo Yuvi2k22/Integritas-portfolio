@@ -1,13 +1,5 @@
 import * as React from 'react';
 import {
-  BookIcon,
-  BookOpenIcon,
-  BoxIcon,
-  CircuitBoardIcon,
-  CuboidIcon,
-  FileBarChartIcon,
-  LayoutIcon,
-  PlayIcon,
   SendHorizonalIcon
 } from 'lucide-react';
 
@@ -16,73 +8,32 @@ import {
   FacebookIcon,
   InstagramIcon,
   LinkedInIcon,
-  TikTokIcon,
   XIcon
 } from '@workspace/ui/components/brand-icons';
 
+// Creative Animation Variants for Components to use
+export const LINK_ANIMATION_VARIANTS = {
+  initial: { opacity: 0, y: 10 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.3, ease: 'easeOut' },
+  hover: {
+    scale: 1.05,
+    x: 5,
+    color: 'hsl(var(--primary))',
+    transition: { type: 'spring', stiffness: 400, damping: 10 }
+  },
+  tap: { scale: 0.95 }
+};
+
 export const MENU_LINKS = [
-  // {
-  //   title: 'Product',
-  //   items: [
-  //     {
-  //       title: 'Feature 1',
-  //       description: 'Short description here',
-  //       icon: <BoxIcon className="size-5 shrink-0" />,
-  //       href: '#',
-  //       external: false
-  //     },
-  //     {
-  //       title: 'Feature 2',
-  //       description: 'Short description here',
-  //       icon: <PlayIcon className="size-5 shrink-0" />,
-  //       href: '#',
-  //       external: false
-  //     },
-  //     {
-  //       title: 'Feature 3',
-  //       description: 'Short description here',
-  //       icon: <CircuitBoardIcon className="size-5 shrink-0" />,
-  //       href: '#',
-  //       external: false
-  //     },
-  //     {
-  //       title: 'Feature 4',
-  //       description: 'Short description here',
-  //       icon: <LayoutIcon className="size-5 shrink-0" />,
-  //       href: '#',
-  //       external: false
-  //     },
-  //     {
-  //       title: 'Feature 5',
-  //       description: 'Short description here',
-  //       icon: <FileBarChartIcon className="size-5 shrink-0" />,
-  //       href: '#',
-  //       external: false
-  //     }
-  //   ]
-  // },
   {
     title: 'Resources',
     items: [
       {
-        title: 'Contact',
-        description: 'Reach out for assistance',
+        title: 'Work with Us',
+        description: 'Reach out to build something amazing together',
         icon: <SendHorizonalIcon className="size-5 shrink-0" />,
         href: routes.marketing.Contact,
-        external: false
-      },
-      // {
-      //   title: 'Roadmap',
-      //   description: 'See what is coming next',
-      //   icon: <LayoutIcon className="size-5 shrink-0" />,
-      //   href: routes.marketing.Roadmap,
-      //   external: true
-      // },
-      {
-        title: 'Docs',
-        description: 'Learn how to use our platform',
-        icon: <BookOpenIcon className="size-5 shrink-0" />,
-        href: routes.marketing.Docs,
         external: false
       }
     ]
@@ -92,12 +43,6 @@ export const MENU_LINKS = [
     href: routes.marketing.Pricing,
     external: false
   },
-  // Blog - commented out for now
-  // {
-  //   title: 'Blog',
-  //   href: routes.marketing.Blog,
-  //   external: false
-  // },
   {
     title: 'Story',
     href: routes.marketing.Story,
@@ -107,107 +52,42 @@ export const MENU_LINKS = [
 
 export const FOOTER_LINKS = [
   {
-    title: 'Product',
+    title: 'Company',
     links: [
-      { name: 'Feature 1', href: '#', external: false },
-      { name: 'Feature 2', href: '#', external: false },
-      { name: 'Feature 3', href: '#', external: false },
-      { name: 'Feature 4', href: '#', external: false },
-      { name: 'Feature 5', href: '#', external: false }
+      { name: 'Our Story', href: routes.marketing.Story, external: false },
+      { name: 'Contact Us', href: routes.marketing.Contact, external: false }
     ]
   },
   {
-    title: 'Resources',
+    title: 'Explore',
     links: [
-      { name: 'Contact', href: routes.marketing.Contact, external: false },
-      { name: 'Roadmap', href: routes.marketing.Roadmap, external: true },
-      { name: 'Docs', href: routes.marketing.Docs, external: false }
-    ]
-  },
-  {
-    title: 'About',
-    links: [
-      { name: 'Story', href: routes.marketing.Story, external: false },
-      // { name: 'Blog', href: routes.marketing.Blog, external: false },
-      { name: 'Careers', href: routes.marketing.Careers, external: false }
-    ]
-  },
-  {
-    title: 'Legal',
-    links: [
-      {
-        name: 'Terms of Use',
-        href: routes.marketing.TermsOfUse,
-        external: false
-      },
-      {
-        name: 'Privacy Policy',
-        href: routes.marketing.PrivacyPolicy,
-        external: false
-      },
-      {
-        name: 'Cookie Policy',
-        href: routes.marketing.CookiePolicy,
-        external: false
-      }
+      { name: 'Pricing', href: routes.marketing.Pricing, external: false }
     ]
   }
 ];
 
 export const SOCIAL_LINKS = [
   {
-    name: 'X (formerly Twitter)',
-    href: '~/',
-    icon: <XIcon className="size-4 shrink-0" />
-  },
-  {
     name: 'LinkedIn',
-    href: '~/',
+    href: 'https://linkedin.com',
     icon: <LinkedInIcon className="size-4 shrink-0" />
   },
   {
+    name: 'X',
+    href: 'https://x.com',
+    icon: <XIcon className="size-4 shrink-0" />
+  },
+  {
     name: 'Facebook',
-    href: '~/',
+    href: 'https://facebook.com',
     icon: <FacebookIcon className="size-4 shrink-0" />
   },
   {
     name: 'Instagram',
-    href: '~/',
+    href: 'https://instagram.com',
     icon: <InstagramIcon className="size-4 shrink-0" />
-  },
-  {
-    name: 'TikTok',
-    href: '~/',
-    icon: <TikTokIcon className="size-4 shrink-0" />
   }
 ];
 
-export const DOCS_LINKS = [
-  {
-    title: 'Getting Started',
-    icon: <CuboidIcon className="size-4 shrink-0 text-muted-foreground" />,
-    items: [
-      {
-        title: 'Introduction',
-        href: '/docs',
-        items: []
-      },
-      {
-        title: 'Dependencies',
-        href: '/docs/dependencies',
-        items: []
-      }
-    ]
-  },
-  {
-    title: 'Guides',
-    icon: <BookIcon className="size-4 shrink-0 text-muted-foreground" />,
-    items: [
-      {
-        title: 'Using MDX',
-        href: '/docs/using-mdx',
-        items: []
-      }
-    ]
-  }
-];
+// Simplified for internal use
+export const DOCS_LINKS: any[] = [];
