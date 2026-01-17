@@ -92,11 +92,12 @@ export const MENU_LINKS = [
     href: routes.marketing.Pricing,
     external: false
   },
-  {
-    title: 'Blog',
-    href: routes.marketing.Blog,
-    external: false
-  },
+  // Blog - commented out for now
+  // {
+  //   title: 'Blog',
+  //   href: routes.marketing.Blog,
+  //   external: false
+  // },
   {
     title: 'Story',
     href: routes.marketing.Story,
@@ -127,7 +128,7 @@ export const FOOTER_LINKS = [
     title: 'About',
     links: [
       { name: 'Story', href: routes.marketing.Story, external: false },
-      { name: 'Blog', href: routes.marketing.Blog, external: false },
+      // { name: 'Blog', href: routes.marketing.Blog, external: false },
       { name: 'Careers', href: routes.marketing.Careers, external: false }
     ]
   },
