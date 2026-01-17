@@ -13,64 +13,46 @@ import ProfileCard from '~/components/cards/ProfileCard';
 
 const DATA = [
   {
-    name: 'Rick Sanchez',
-    role: 'Machine Learning Engineer',
-    image: '/assets/story/rick-sanchez.webp',
-    previousRole: 'Formerly AI research engineer at Meta',
-    education: 'PhD in AI from Stanford',
-    handle: 'ricksanchez',
-    status: 'Online' as const,
-    contactText: 'Contact Me'
+    name: 'Yuvaraj',
+    role: 'Lead Developer',
+    image: '/assets/team/dp.png',
+    handle: 'yuvaraj',
+    status: 'Online' as const
   },
   {
-    name: 'Morty Smith',
-    role: 'Senior Software Engineer',
-    image: '/assets/story/morty-smith.webp',
-    previousRole: 'Formerly backend engineer at Google',
-    education: 'BSc in Computer Science from UC Berkeley',
-    handle: 'mortysmith',
-    status: 'Online' as const,
-    contactText: 'Contact Me'
+    name: 'Guru prasanth',
+    role: 'Full Stack Developer',
+    image: '/assets/team/IMG_20260117_174225.jpg',
+    handle: 'guruprasanth',
+    status: 'Online' as const
   },
   {
-    name: 'Summer Smith',
-    role: 'Product Designer',
-    image: '/assets/story/summer-smith.webp',
-    previousRole: 'Formerly UX designer at Apple',
-    education: 'MFA in Design from Rhode Island School of Design',
-    handle: 'summersmith',
-    status: 'Away' as const,
-    contactText: 'Contact Me'
-  },
-  {
-    name: 'Beth Smith',
-    role: 'DevOps Engineer',
-    image: '/assets/story/beth-smith.webp',
-    previousRole: 'Formerly infrastructure engineer at Amazon',
-    education: 'MSc in Systems Engineering from MIT',
-    handle: 'bethsmith',
-    status: 'Online' as const,
-    contactText: 'Contact Me'
-  },
-  {
-    name: 'Jerry Smith',
+    name: 'Nithish Kumar T',
     role: 'Frontend Developer',
-    image: '/assets/story/jerry-smith.webp',
-    previousRole: 'Formerly UI developer at Netflix',
-    education: 'BSc in Web Development from UCLA',
-    handle: 'jerrysmith',
-    status: 'Offline' as const,
-    contactText: 'Contact Me'
+    image: '/assets/team/SAVE_20240710_164444.jpg',
+    handle: 'nithishkumar',
+    status: 'Online' as const
   },
   {
-    name: 'Mr. Meeseeks',
-    role: 'QA Engineer',
-    image: '/assets/story/mr-meeseeks.webp',
-    previousRole: 'Formerly test automation lead at Microsoft',
-    education: 'BSc in Software Testing from Carnegie Mellon',
-    handle: 'mrmeeseeks',
-    status: 'Online' as const,
-    contactText: 'Contact Me'
+    name: 'Vijay',
+    role: 'Full stack Developer',
+    image: '/assets/team/dp.png',
+    handle: 'vijaykrishna',
+    status: 'Online' as const
+  },
+  {
+    name: 'Rahul A',
+    role: 'Backend Developer',
+    image: '/assets/team/Rahul_softcopy.jpeg',
+    handle: 'rahula',
+    status: 'Online' as const
+  },
+  {
+    name: 'HariHaran P',
+    role: 'Software Developer',
+    image: '/assets/team/dp.png',
+    handle: 'hariharan',
+    status: 'Online' as const
   }
 ];
 
@@ -89,12 +71,12 @@ export function StoryTeam(): React.JSX.Element {
               title={person.role}
               handle={person.handle}
               status={person.status}
-              contactText={person.contactText}
+              contactText=""
               avatarUrl={person.image}
               showUserInfo={true}
               enableTilt={true}
               enableMobileTilt={false}
-              onContactClick={() => console.log(`Contact clicked for ${person.name}`)}
+              onContactClick={() => { }}
             />
           ))}
         </div>
