@@ -1,32 +1,53 @@
 'use client';
 
 import * as React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
-  BoxIcon,
-  ChevronRightIcon,
-  CircuitBoardIcon,
-  FileBarChartIcon,
-  LayoutIcon,
-  PlayIcon
+  MonitorIcon,
+  SmartphoneIcon,
+  LayersIcon,
+  CloudIcon,
+  ChevronRightIcon
 } from 'lucide-react';
 
 import { routes } from '@workspace/routes';
 import { Badge } from '@workspace/ui/components/badge';
 import { buttonVariants } from '@workspace/ui/components/button';
-import { ScrollArea, ScrollBar } from '@workspace/ui/components/scroll-area';
 import { Separator } from '@workspace/ui/components/separator';
-import {
-  UnderlinedTabs,
-  UnderlinedTabsContent,
-  UnderlinedTabsList,
-  UnderlinedTabsTrigger
-} from '@workspace/ui/components/tabs';
 import { cn } from '@workspace/ui/lib/utils';
 
 import { GridSection } from '~/components/fragments/grid-section';
+
+// --- Services Data ---
+const SERVICES = [
+  {
+    title: 'Web Development',
+    description: 'High-performance, SEO-optimized web applications built with modern frameworks.',
+    technologies: ['Next.js', 'React', 'TypeScript', 'Node.js'],
+    icon: <MonitorIcon className="size-6 text-blue-500" />,
+  },
+  {
+    title: 'Mobile App Development',
+    description: 'Native-feel cross-platform mobile solutions for iOS and Android devices.',
+    technologies: ['React Native', 'Flutter', 'Firebase', 'Expo'],
+    icon: <SmartphoneIcon className="size-6 text-purple-500" />,
+  },
+  {
+    title: 'Backend & Architecture',
+    description: 'Robust server-side systems designed for security, speed, and scalability.',
+    technologies: ['.NET', 'Python', 'PostgreSQL', 'Docker'],
+    icon: <LayersIcon className="size-6 text-emerald-500" />,
+  },
+  {
+    title: 'Cloud & DevOps',
+    description: 'Reliable cloud infrastructure management and automated CI/CD pipelines.',
+    technologies: ['AWS', 'Azure', 'Vercel', 'Terraform'],
+    icon: <CloudIcon className="size-6 text-sky-500" />,
+  },
+];
+
+// --- Sub-Components ---
 
 function HeroPill(): React.JSX.Element {
   return (
@@ -36,7 +57,7 @@ function HeroPill(): React.JSX.Element {
       transition={{ duration: 0.8 }}
       className="flex items-center justify-center"
     >
-      <Link href="/contact"> {/* Changed href to point to contact */}
+      <Link href="/contact">
         <Badge
           variant="outline"
           className="group h-8 rounded-full px-3 text-xs font-medium shadow-sm duration-200 hover:bg-accent/50 sm:text-sm"
@@ -44,10 +65,7 @@ function HeroPill(): React.JSX.Element {
           <div className="w-fit py-0.5 text-center text-xs text-blue-500 sm:text-sm">
             New!
           </div>
-          <Separator
-            orientation="vertical"
-            className="mx-2"
-          />
+          <Separator orientation="vertical" className="mx-2" />
           Now accepting new development projects
           <ChevronRightIcon className="ml-1.5 size-3 shrink-0 text-foreground transition-transform group-hover:translate-x-0.5" />
         </Badge>
@@ -94,26 +112,36 @@ function HeroButtons(): React.JSX.Element {
     >
       <Link
         href={routes.dashboard.auth.SignUp}
-        className={cn(
-          buttonVariants({
-            variant: 'default'
-          }),
-          'h-10 rounded-xl sm:h-9'
-        )}
+        className={cn(buttonVariants({ variant: 'default' }), 'h-10 rounded-xl sm:h-9')}
       >
         Start for free
       </Link>
       <Link
         href={routes.marketing.Contact}
-        className={cn(
-          buttonVariants({
-            variant: 'outline'
-          }),
-          'h-10 rounded-xl sm:h-9'
-        )}
+        className={cn(buttonVariants({ variant: 'outline' }), 'h-10 rounded-xl sm:h-9')}
       >
         Talk to sales
       </Link>
+    </motion.div>
+  );
+}
+
+// --- NEW HEADER COMPONENT ---
+function ServicesHeader(): React.JSX.Element {
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.8, duration: 0.4 }}
+      className="mt-20 flex flex-col items-center gap-2"
+    >
+       <span className="text-xs font-bold uppercase tracking-[0.2em] text-blue-500">
+        Expertise
+      </span>
+      <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+        Services We Offer
+      </h2>
+      <div className="mt-2 h-1 w-12 rounded-full bg-blue-500/20" />
     </motion.div>
   );
 }
@@ -126,247 +154,97 @@ function MainDashedGridLines(): React.JSX.Element {
       transition={{ delay: 0.6, duration: 0.4 }}
     >
       <svg className="absolute left-[16.85%] top-0 hidden h-full w-px [mask-image:linear-gradient(to_bottom,#0000,#000_128px,#000_calc(100%-24px),#0000)] lg:block">
-        <line
-          x1="0.5"
-          y1="0"
-          x2="0.5"
-          y2="100%"
-          strokeLinecap="round"
-          strokeDasharray="5 5"
-          stroke="hsl(var(--border))"
-        />
+        <line x1="0.5" y1="0" x2="0.5" y2="100%" strokeLinecap="round" strokeDasharray="5 5" stroke="hsl(var(--border))" />
       </svg>
       <svg className="absolute right-[16.85%] top-0 hidden h-full w-px [mask-image:linear-gradient(to_bottom,#0000,#000_128px,#000_calc(100%-24px),#0000)] lg:block">
-        <line
-          x1="0.5"
-          y1="0"
-          x2="0.5"
-          y2="100%"
-          strokeLinecap="round"
-          strokeDasharray="5 5"
-          stroke="hsl(var(--border))"
-        />
-      </svg>
-      <svg className="absolute bottom-[52px] left-[calc(50%-50vw)] hidden h-px w-screen [mask-image:linear-gradient(to_right,#0000,#000_100px,#000_calc(100%-100px),#0000)] lg:block">
-        <line
-          x1="0"
-          y1="0.5"
-          x2="100%"
-          y2="0.5"
-          strokeLinecap="round"
-          strokeDasharray="5 5"
-          stroke="hsl(var(--border))"
-        />
+        <line x1="0.5" y1="0" x2="0.5" y2="100%" strokeLinecap="round" strokeDasharray="5 5" stroke="hsl(var(--border))" />
       </svg>
     </motion.div>
-  );
-}
-
-function SupportiveDashedGridLines(): React.JSX.Element {
-  return (
-    <>
-      <svg className="absolute left-[calc(50%-50vw)] top-[-25px] z-10 hidden h-px w-screen [mask-image:linear-gradient(to_right,#0000,#000_100px,#000_calc(100%-100px),#0000)] lg:block">
-        <line
-          x1="0"
-          y1="0.5"
-          x2="100%"
-          y2="0.5"
-          strokeLinecap="round"
-          strokeDasharray="5 5"
-          stroke="hsl(var(--border))"
-        />
-      </svg>
-      <svg className="absolute left-[calc(50%-50vw)] top-0 z-10 hidden h-px w-screen [mask-image:linear-gradient(to_right,#0000,#000_100px,#000_calc(100%-100px),#0000)] lg:block">
-        <line
-          x1="0"
-          y1="0.5"
-          x2="100%"
-          y2="0.5"
-          strokeLinecap="round"
-          strokeDasharray="5 5"
-          stroke="hsl(var(--border))"
-        />
-      </svg>
-      <svg className="absolute left-[calc(50%-50vw)] top-[52px] z-10 hidden h-px w-screen [mask-image:linear-gradient(to_right,#0000,#000_100px,#000_calc(100%-100px),#0000)] lg:block">
-        <line
-          x1="0"
-          y1="0.5"
-          x2="100%"
-          y2="0.5"
-          strokeLinecap="round"
-          strokeDasharray="5 5"
-          stroke="hsl(var(--border))"
-        />
-      </svg>
-    </>
   );
 }
 
 function HeroIllustration(): React.JSX.Element {
+  const [visibleCards, setVisibleCards] = React.useState<boolean[]>(new Array(SERVICES.length).fill(false));
+  const cardsRef = React.useRef<(HTMLDivElement | null)[]>([]);
+
+  React.useEffect(() => {
+    const observers = cardsRef.current.map((card, index) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisibleCards((prev) => {
+              const newState = [...prev];
+              newState[index] = true;
+              return newState;
+            });
+          }
+        },
+        { threshold: 0.1 }
+      );
+      if (card) observer.observe(card);
+      return observer;
+    });
+    return () => observers.forEach((obs) => obs.disconnect());
+  }, []);
+
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.6, duration: 0.4 }}
-      className="relative mt-3 lg:mt-6"
-    >
-      <UnderlinedTabs defaultValue="feature1">
-        <ScrollArea className="max-w-[100vw] lg:max-w-none">
-          <UnderlinedTabsList className="relative z-20 mb-6 flex h-fit flex-row flex-wrap justify-center md:flex-nowrap">
-            <UnderlinedTabsTrigger
-              value="feature1"
-              className="mx-1 px-2.5 sm:mx-2 sm:px-3"
-            >
-              <BoxIcon className="mr-2 size-4 shrink-0" />
-              Sample Feature 1
-            </UnderlinedTabsTrigger>
-            <UnderlinedTabsTrigger
-              value="feature2"
-              className="mx-1 px-2.5 sm:mx-2 sm:px-3"
-            >
-              <PlayIcon className="mr-2 size-4 shrink-0" />
-              Sample Feature 2
-            </UnderlinedTabsTrigger>
-            <UnderlinedTabsTrigger
-              value="feature3"
-              className="mx-1 px-2.5 sm:mx-2 sm:px-3"
-            >
-              <CircuitBoardIcon className="mr-2 size-4 shrink-0" />
-              Sample Feature 3
-            </UnderlinedTabsTrigger>
-            <UnderlinedTabsTrigger
-              value="feature4"
-              className="mx-1 px-2.5 sm:mx-2 sm:px-3"
-            >
-              <LayoutIcon className="mr-2 size-4 shrink-0" />
-              SampleFeature 4
-            </UnderlinedTabsTrigger>
-            <UnderlinedTabsTrigger
-              value="feature5"
-              className="mx-1 px-2.5 sm:mx-2 sm:px-3"
-            >
-              <FileBarChartIcon className="mr-2 size-4 shrink-0" />
-              Sample Feature 5
-            </UnderlinedTabsTrigger>
-          </UnderlinedTabsList>
-          <ScrollBar
-            orientation="horizontal"
-            className="invisible"
-          />
-        </ScrollArea>
-        <div className="relative mb-1 w-full rounded-xl dark:border-none dark:bg-background">
-          <SupportiveDashedGridLines />
-          <div className="relative z-20 bg-background">
-            <UnderlinedTabsContent value="feature1">
-              <Image
-                priority
-                quality={100}
-                src="/assets/hero/Feature-1.webp"
-                width="1328"
-                height="727"
-                alt="Feature 1 screenshot"
-                className="block rounded-xl border shadow dark:hidden"
-              />
-              <Image
-                priority
-                quality={100}
-                src="/assets/hero/Feature-1.webp"
-                width="1328"
-                height="727"
-                alt="Feature 1 screenshot"
-                className="hidden rounded-xl border shadow dark:block"
-              />
-            </UnderlinedTabsContent>
-            <UnderlinedTabsContent value="feature2">
-              <Image
-                quality={100}
-                src="/assets/hero/Feature-2.webp"
-                width="1328"
-                height="727"
-                alt="Feature 2 screenshot"
-                className="block rounded-xl border shadow dark:hidden"
-              />
-              <Image
-                quality={100}
-                src="/assets/hero/Feature-2.webp"
-                width="1328"
-                height="727"
-                alt="Feature 2 screenshot"
-                className="hidden rounded-xl border shadow dark:block"
-              />
-            </UnderlinedTabsContent>
-            <UnderlinedTabsContent value="feature3">
-              <Image
-                quality={100}
-                src="/assets/hero/Feature-3.webp"
-                width="1328"
-                height="727"
-                alt="Feature 3 screenshot"
-                className="block rounded-xl border shadow dark:hidden"
-              />
-              <Image
-                quality={100}
-                src="/assets/hero/Feature-3.webp"
-                width="1328"
-                height="727"
-                alt="Feature 3 screenshot"
-                className="hidden rounded-xl border shadow dark:block"
-              />
-            </UnderlinedTabsContent>
-            <UnderlinedTabsContent value="feature4">
-              <Image
-                quality={100}
-                src="/assets/hero/Feature-4.webp"
-                width="1328"
-                height="727"
-                alt="Feature 4 screenshot"
-                className="block rounded-xl border shadow dark:hidden"
-              />
-              <Image
-                quality={100}
-                src="/assets/hero/Feature-4.webp"
-                width="1328"
-                height="727"
-                alt="Feature 4 screenshot"
-                className="hidden rounded-xl border shadow dark:block"
-              />
-            </UnderlinedTabsContent>
-            <UnderlinedTabsContent value="feature5">
-              <Image
-                quality={100}
-                src="/assets/hero/Feature-5.webp"
-                width="1328"
-                height="727"
-                alt="Feature 5 screenshot"
-                className="block rounded-xl border shadow dark:hidden"
-              />
-              <Image
-                quality={100}
-                src="/assets/hero/Feature-5.webp"
-                width="1328"
-                height="727"
-                alt="Feature 5 screenshot"
-                className="hidden rounded-xl border shadow dark:block"
-              />
-            </UnderlinedTabsContent>
-          </div>
-        </div>
-      </UnderlinedTabs>
-    </motion.div>
+    <div className="relative mt-8 w-full max-w-5xl mx-auto px-4">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+        {SERVICES.map((service, index) => (
+          <motion.div
+            key={index}
+            ref={(el) => { cardsRef.current[index] = el; }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={visibleCards[index] ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="group relative overflow-hidden rounded-2xl border border-border bg-card/50 p-5 text-left transition-all duration-500 hover:border-primary/50 hover:shadow-xl"
+          >
+            <div className="absolute -right-8 -top-8 size-24 rounded-full bg-primary/5 blur-2xl opacity-0 transition-opacity group-hover:opacity-100" />
+            
+            <div className="flex items-start gap-4">
+              <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-secondary group-hover:bg-primary/10 transition-colors">
+                {service.icon}
+              </div>
+              <div>
+                <h3 className="text-lg font-bold tracking-tight text-foreground mb-1">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  {service.description}
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {service.technologies.slice(0, 3).map((tech) => (
+                    <span key={tech} className="rounded-md border border-border bg-muted/30 px-2 py-0.5 text-[10px] font-semibold text-muted-foreground">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
   );
 }
 
+// --- Main Export ---
+
 export function Hero(): React.JSX.Element {
   return (
-    <GridSection className="overflow-x-hidden">
+    <GridSection className="overflow-x-hidden pb-20">
       <MainDashedGridLines />
-      <div className="mx-auto mt-16 flex flex-col gap-6 px-2 sm:mt-20 sm:px-1 md:mt-24 lg:mt-32">
-        <div className="gap-2">
+      <div className="mx-auto mt-16 flex flex-col gap-6 px-2 sm:mt-20 sm:px-1 md:mt-24 lg:mt-32 text-center">
+        <div className="flex flex-col gap-2">
           <HeroPill />
           <HeroTitle />
         </div>
         <HeroDescription />
         <HeroButtons />
+        
+        {/* New Header placed here */}
+        <ServicesHeader />
+        
         <HeroIllustration />
       </div>
     </GridSection>

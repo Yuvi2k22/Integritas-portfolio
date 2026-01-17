@@ -21,46 +21,46 @@ import {
 } from '@workspace/ui/components/brand-icons';
 
 export const MENU_LINKS = [
-  {
-    title: 'Product',
-    items: [
-      {
-        title: 'Feature 1',
-        description: 'Short description here',
-        icon: <BoxIcon className="size-5 shrink-0" />,
-        href: '#',
-        external: false
-      },
-      {
-        title: 'Feature 2',
-        description: 'Short description here',
-        icon: <PlayIcon className="size-5 shrink-0" />,
-        href: '#',
-        external: false
-      },
-      {
-        title: 'Feature 3',
-        description: 'Short description here',
-        icon: <CircuitBoardIcon className="size-5 shrink-0" />,
-        href: '#',
-        external: false
-      },
-      {
-        title: 'Feature 4',
-        description: 'Short description here',
-        icon: <LayoutIcon className="size-5 shrink-0" />,
-        href: '#',
-        external: false
-      },
-      {
-        title: 'Feature 5',
-        description: 'Short description here',
-        icon: <FileBarChartIcon className="size-5 shrink-0" />,
-        href: '#',
-        external: false
-      }
-    ]
-  },
+  // {
+  //   title: 'Product',
+  //   items: [
+  //     {
+  //       title: 'Feature 1',
+  //       description: 'Short description here',
+  //       icon: <BoxIcon className="size-5 shrink-0" />,
+  //       href: '#',
+  //       external: false
+  //     },
+  //     {
+  //       title: 'Feature 2',
+  //       description: 'Short description here',
+  //       icon: <PlayIcon className="size-5 shrink-0" />,
+  //       href: '#',
+  //       external: false
+  //     },
+  //     {
+  //       title: 'Feature 3',
+  //       description: 'Short description here',
+  //       icon: <CircuitBoardIcon className="size-5 shrink-0" />,
+  //       href: '#',
+  //       external: false
+  //     },
+  //     {
+  //       title: 'Feature 4',
+  //       description: 'Short description here',
+  //       icon: <LayoutIcon className="size-5 shrink-0" />,
+  //       href: '#',
+  //       external: false
+  //     },
+  //     {
+  //       title: 'Feature 5',
+  //       description: 'Short description here',
+  //       icon: <FileBarChartIcon className="size-5 shrink-0" />,
+  //       href: '#',
+  //       external: false
+  //     }
+  //   ]
+  // },
   {
     title: 'Resources',
     items: [
@@ -71,13 +71,13 @@ export const MENU_LINKS = [
         href: routes.marketing.Contact,
         external: false
       },
-      {
-        title: 'Roadmap',
-        description: 'See what is coming next',
-        icon: <LayoutIcon className="size-5 shrink-0" />,
-        href: routes.marketing.Roadmap,
-        external: true
-      },
+      // {
+      //   title: 'Roadmap',
+      //   description: 'See what is coming next',
+      //   icon: <LayoutIcon className="size-5 shrink-0" />,
+      //   href: routes.marketing.Roadmap,
+      //   external: true
+      // },
       {
         title: 'Docs',
         description: 'Learn how to use our platform',

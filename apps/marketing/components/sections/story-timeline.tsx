@@ -9,7 +9,7 @@ const SERVICES = [
   {
     title: 'Backend Development',
     description: 'Robust, scalable server-side solutions that power your applications.',
-    technologies: ['.NET', 'Python', 'Java', 'Spring Boot'],
+    technologies: ['.NET', 'Python', 'Java', 'Spring Boot','Node.js'],
     icon: '⚙️',
   },
   {
@@ -27,7 +27,7 @@ const SERVICES = [
   {
     title: 'Cloud & Deployment',
     description: 'Seamless deployment pipelines and cloud infrastructure management.',
-    technologies: ['Vercel'],
+    technologies: ['Vercel','AWS', 'Azure', 'Google Cloud'],
     icon: '☁️',
   },
 ];
