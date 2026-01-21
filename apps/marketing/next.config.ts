@@ -58,6 +58,13 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '**',
         search: ''
+      },
+      {
+        protocol: 'https',
+        hostname: 'aceternity.com',
+        port: '',
+        pathname: '**',
+        search: ''
       }
     ]
   },
