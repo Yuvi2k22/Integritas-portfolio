@@ -13,10 +13,10 @@ export default function IndexPage(): React.JSX.Element {
   return (
     <>
       <Hero />
-      <Logos />
+      {/* <Logos /> */}
       <Problem />
       <Solution />
-      <Stats />
+      {/* <Stats /> */}
       <Testimonials />
       <FAQ />
       <CTA />
