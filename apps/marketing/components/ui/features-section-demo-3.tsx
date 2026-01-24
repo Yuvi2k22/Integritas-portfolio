@@ -111,7 +111,7 @@ const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
 export const SkeletonOne = () => {
     return (
         <div className="relative flex py-8 px-2 gap-10 h-full">
-            <div className="w-full  p-5  mx-auto bg-white dark:bg-neutral-900 shadow-2xl group h-full">
+            <div className="w-full  p-5  mx-auto bg-white dark:bg-neutral-900 group h-full">
                 <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
                     <div className="h-full w-full p-16">
                         <DotLottiePlayer src="/Brainstorming.lottie" autoplay loop className="h-full w-full object-cover" />

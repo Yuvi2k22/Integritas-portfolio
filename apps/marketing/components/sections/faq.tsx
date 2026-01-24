@@ -14,35 +14,30 @@ import { GridSection } from '~/components/fragments/grid-section';
 
 const DATA = [
   {
-    question: `What does ${APP_NAME} do?`,
-    answer: `This is a demo application built with Achromatic. It will save you time and effort building your next SaaS. Here you would write something like "${APP_NAME} helps you manage customer relationships, organize sales activities and improve service delivery to make your business more efficient and successful."`
+    question: `What services does Integritas Solutions provide?`,
+    answer: `We are expert Software Engineers taking ideas from Concept to Production. We build scalable Web & Mobile apps, Custom Ecommerce stores, and handle Enterprise Legacy System Migrations.`
   },
   {
-    question: 'How will this benefit my business?',
-    answer: `By centralizing your customer data and automating tasks, ${APP_NAME} makes it easier to track leads, manage your sales pipeline and collaborate with your team, saving you time and boosting your productivity.`
+    question: 'What kind of web and mobile apps do you build?',
+    answer: `We specialize in SaaS Platforms, Dashboards, Landing Pages, and high-performance React Native / Flutter mobile apps, creating scalable systems that last.`
   },
   {
-    question: 'Is my data safe?',
+    question: 'Do you work with startups or small businesses?',
     answer:
-      'Your data security is our top priority. We use advanced encryption and follow industry-standard security measures to keep your information protected and compliant.'
+      'Yes, we support businesses of all sizes! Whether you need a Small Business Website, a Startup MVP, or a large-scale Enterprise Migration, we have the expertise to help.'
   },
   {
-    question: 'What kind of integrations are available?',
-    answer: `${APP_NAME} supports integration with various business tools, including CRMs, email marketing software and collaboration platforms. Connect with Salesforce, HubSpot and more to create a seamless workflow.`
+    question: 'Can you help with AI integration?',
+    answer: `Absolutely. We offer AI Solutions including LLM integration and the development of AI-powered workflows to modernize your business operations.`
   },
   {
-    question: 'How easy is it to onboard my team?',
+    question: 'What technology stack do you use?',
     answer:
-      'The platform is designed for easy onboarding, with intuitive interfaces and step-by-step guides to help your team get up and running quickly.'
+      'We ship with modern AI tools for speed and trusted enterprise frameworks for stability, ensuring your product is both cutting-edge and reliable.'
   },
   {
-    question: 'What types of businesses can use this?',
-    answer: `${APP_NAME} is suitable for businesses of all sizes and industries, from startups to large enterprises, looking to streamline their customer relationship management.`
-  },
-  {
-    question: 'Can I customize this to fit my business needs?',
-    answer:
-      'Absolutely. You can customize workflows, fields and templates to suit the unique needs of your business.'
+    question: 'What is your development philosophy?',
+    answer: `Our philosophy is simple: No shortcuts. No noise. Just well-built digital experiences that deliver real value.`
   }
 ];
 
