@@ -17,6 +17,7 @@ export function GridSection({
 }: GridSectionProps): React.JSX.Element {
   return (
     <section {...other}>
+      <div className="h-px w-full bg-border" />
       <div
         className={cn('px-2 sm:container', className)}
         {...containerProps}
