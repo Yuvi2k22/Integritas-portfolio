@@ -76,6 +76,7 @@ export const HeroParallax = ({
                             product={product}
                             translate={translateX}
                             key={product.title}
+                            priority={true}
                         />
                     ))}
                 </motion.div>
@@ -119,6 +120,7 @@ export const Header = () => {
 export const ProductCard = ({
     product,
     translate,
+    priority = false,
 }: {
     product: {
         title: string;
@@ -126,6 +128,7 @@ export const ProductCard = ({
         thumbnail: string;
     };
     translate: MotionValue<number>;
+    priority?: boolean;
 }) => {
     return (
         <motion.div
@@ -144,6 +147,8 @@ export const ProductCard = ({
                 width="600"
                 className="object-cover object-left-top absolute h-full w-full inset-0"
                 alt={product.title}
+                priority={priority}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             <div className="absolute inset-0 h-full w-full opacity-0 bg-black pointer-events-none"></div>
         </motion.div>

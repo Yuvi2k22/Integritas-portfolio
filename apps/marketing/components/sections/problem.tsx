@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { BlurFade } from '~/components/fragments/blur-fade';
 import { GridSection } from '~/components/fragments/grid-section';
 import { TextGenerateWithSelectBoxEffect } from '~/components/fragments/text-generate-with-select-box-effect';
-import { BarChartLottie, WorkflowLottie } from '~/components/ui/lottie-placeholders';
+
 
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 const DotLottiePlayer = dynamic(

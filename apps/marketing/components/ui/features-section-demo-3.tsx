@@ -3,7 +3,7 @@ import React from "react";
 import { cn } from "@workspace/ui/lib/utils";
 import createGlobe from "cobe";
 import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import dynamic from 'next/dynamic';
 
@@ -159,11 +159,13 @@ export const SkeletonFour = () => {
 
 export const Globe = ({ className }: { className?: string }) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const isInView = useInView(containerRef, { margin: "200px" });
 
     useEffect(() => {
         let phi = 0;
 
-        if (!canvasRef.current) return;
+        if (!canvasRef.current || !isInView) return;
 
         const globe = createGlobe(canvasRef.current, {
             devicePixelRatio: 2,
@@ -194,13 +196,14 @@ export const Globe = ({ className }: { className?: string }) => {
         return () => {
             globe.destroy();
         };
-    }, []);
+    }, [isInView]);
 
     return (
-        <canvas
-            ref={canvasRef}
-            style={{ width: 600, height: 600, maxWidth: "100%", aspectRatio: 1 }}
-            className={className}
-        />
+        <div ref={containerRef} className={cn("w-full h-full flex justify-center items-center", className)}>
+            <canvas
+                ref={canvasRef}
+                style={{ width: 600, height: 600, maxWidth: "100%", aspectRatio: 1, opacity: isInView ? 1 : 0, transition: 'opacity 1s ease-in-out' }}
+            />
+        </div>
     );
 };
