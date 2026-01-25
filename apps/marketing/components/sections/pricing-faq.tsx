@@ -14,96 +14,53 @@ import { GridSection } from '~/components/fragments/grid-section';
 
 const DATA = [
   {
-    question: `What pricing plans does ${APP_NAME} offer?`,
-    answer: (
-      <div>
-        We offer three plans:
-        <br />
-        <ul className="mt-2 list-disc pl-5">
-          <li>
-            <strong>Free:</strong> A starter plan for individuals or small teams
-          </li>
-          <li>
-            <strong>Pro:</strong> Advanced features for growing businesses
-          </li>
-          <li>
-            <strong>Enterprise:</strong> Custom solutions for large
-            organizations
-          </li>
-        </ul>
-        <p className="mt-2">Each plan is designed to scale with your needs.</p>
-      </div>
-    )
-  },
-  {
-    question: "What's included in the Free plan?",
-    answer: (
-      <div>
-        The Free plan is perfect for getting started and includes:
-        <ul className="mt-2 list-disc pl-5">
-          <li>AI Contact Scoring for 100 contacts/month</li>
-          <li>Smart Email Analysis for 1,000 emails/month</li>
-          <li>Access for up to 2 team members</li>
-        </ul>
-      </div>
-    )
-  },
-  {
-    question: 'What features are in the Pro plan?',
-    answer: (
-      <div>
-        The Pro plan is ideal for growing teams and includes:
-        <ul className="mt-2 list-disc pl-5">
-          <li>Unlimited AI Contact Scoring and Email Analysis</li>
-          <li>Advanced Lead Predictions</li>
-          <li>Real-time Sentiment Analysis</li>
-          <li>Up to 120 team members</li>
-        </ul>
-      </div>
-    )
-  },
-  {
-    question: 'What does the Enterprise plan offer?',
-    answer: (
-      <div>
-        The Enterprise plan is fully customizable and includes:
-        <ul className="mt-2 list-disc pl-5">
-          <li>AI Contact Scoring and Email Analysis with custom limits</li>
-          <li>Custom AI models for Lead Predictions</li>
-          <li>Advanced storage solutions</li>
-          <li>24/7 Enterprise Support</li>
-          <li>Unlimited team members</li>
-        </ul>
-        <p className="mt-2">Contact us to discuss your organization's needs.</p>
-      </div>
-    )
-  },
-  {
-    question: 'What happens if I upgrade or downgrade my plan?',
+    question: 'How does the custom pricing work?',
     answer: (
       <p>
-        If you upgrade, you'll be charged a prorated amount for the remaining
-        time in your billing cycle. If you downgrade, the changes will take
-        effect at the end of your current billing cycle.
+        We assess your specific requirements, project complexity, and timeline to
+        provide a tailored quote. This ensures you only pay for exactly what you
+        need, with no hidden costs for unused features.
       </p>
     )
   },
   {
-    question: 'Is there a setup fee?',
+    question: 'What defines the cost of a project?',
     answer: (
       <p>
-        No, there are no setup fees. You can start using {APP_NAME} immediately
-        after signing up.
+        The cost is primarily driven by the number of pages/screens, design
+        complexity (custom animations, unique UI), feature requirements (CMS,
+        e-commerce, integrations), and the timeline for delivery.
       </p>
     )
   },
   {
-    question: 'What happens if I exceed my plan limits?',
+    question: 'Is there a maintenance fee?',
     answer: (
       <p>
-        If you exceed your plan limits, you'll receive an alert and can either
-        upgrade to a higher plan or adjust your usage to stay within your
-        current plan.
+        We offer optional maintenance packages to keep your site secure and
+        up-to-date. However, for most static sites and simple web apps, there
+        are no mandatory ongoing monthly fees other than your standard hosting
+        costs.
+      </p>
+    )
+  },
+  {
+    question: 'How long does a typical project take?',
+    answer: (
+      <p>
+        Timelines vary by scope. A standard marketing website typically takes
+        2-4 weeks, while complex web applications may take 6-12 weeks or more.
+        We provide a detailed timeline with every proposal.
+      </p>
+    )
+  },
+  {
+    question: 'Can I update the project scope later?',
+    answer: (
+      <p>
+        Absolutely. We work agilely and can accommodate scope changes. We&apos;ll
+        provide a transparent quote for any additional requirements that arise
+        during or after the initial development phase.
       </p>
     )
   }
@@ -126,7 +83,7 @@ export function PricingFAQ(): React.JSX.Element {
               >
                 Contact us
               </Link>{' '}
-              - we're here to help you find the perfect fit for your needs.
+              - we&apos;re here to help you find the perfect fit for your needs.
             </p>
           </div>
           <div className="mx-auto flex w-full max-w-xl flex-col">

@@ -1,34 +1,63 @@
 import * as React from 'react';
+import { AppWindow, Database, ShoppingBag, Sparkles } from 'lucide-react';
 
 import { GridSection } from '~/components/fragments/grid-section';
+
+const SERVICES = [
+  {
+    icon: AppWindow,
+    title: 'Web & Mobile',
+    description:
+      'SaaS platforms, internal dashboards, landing pages, and React Native / Flutter applications.'
+  },
+  {
+    icon: ShoppingBag,
+    title: 'E-Commerce',
+    description:
+      'Custom stores, multi-vendor marketplaces, and payment-integrated admin dashboards.'
+  },
+  {
+    icon: Database,
+    title: 'Enterprise Systems',
+    description:
+      'Legacy system modernization, backend re-architecture, and performance optimization.'
+  },
+  {
+    icon: Sparkles,
+    title: 'AI Solutions',
+    description:
+      'LLM integrations, AI-assisted workflows, and intelligent automation.'
+  }
+];
 
 export function StoryVision(): React.JSX.Element {
   return (
     <GridSection>
-      <div className="container max-w-6xl py-20">
-        <div className="grid gap-16 lg:grid-cols-2">
-          <div>
-            <h2 className="mb-8 text-sm font-medium uppercase tracking-wider text-muted-foreground">
-              Our vision
-            </h2>
-            <p className="text-2xl font-medium leading-relaxed md:text-3xl">
-              "CRM shouldn't just store relationships — it should actively help
-              you build better ones with AI."
-            </p>
-          </div>
-          <div className="space-y-6 text-base text-muted-foreground md:text-lg">
-            <p>
-              Traditional CRMs were built for a different era. We're creating
-              the first true AI-native platform that automates the mundane and
-              amplifies what humans do best: building meaningful relationships.
-            </p>
-            <p>
-              By combining cutting-edge AI with decades of sales expertise,
-              we've created a CRM that actually helps you sell better —
-              predicting outcomes, suggesting next steps, and handling routine
-              tasks automatically.
-            </p>
-          </div>
+      <div className="container py-20">
+        <div className="mb-16 text-center">
+          <h2 className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
+            What We Build
+          </h2>
+          <h3 className="mt-4 text-3xl font-semibold md:text-4xl">
+            Comprehensive Digital Solutions
+          </h3>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {SERVICES.map((service, index) => (
+            <div
+              key={index}
+              className="group rounded-2xl border bg-background/50 p-8 transition-colors hover:bg-muted/50"
+            >
+              <div className="mb-6 inline-flex rounded-lg bg-primary/10 p-3 text-primary">
+                <service.icon className="size-6" />
+              </div>
+              <h4 className="mb-3 text-xl font-medium">{service.title}</h4>
+              <p className="leading-relaxed text-muted-foreground">
+                {service.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </GridSection>

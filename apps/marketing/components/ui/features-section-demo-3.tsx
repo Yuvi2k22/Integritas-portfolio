@@ -111,25 +111,25 @@ const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
 export const SkeletonOne = () => {
     return (
         <div className="relative flex py-8 px-2 gap-10 h-full">
-            <div className="w-full  p-5  mx-auto bg-white dark:bg-neutral-900 group h-full">
+            <div className="w-full  p-5  mx-auto bg-white dark:bg-background group h-full">
                 <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
-                    <div className="h-full w-full p-16">
+                    <div className="h-full w-full">
                         <DotLottiePlayer src="/Brainstorming.lottie" autoplay loop className="h-full w-full object-cover" />
                     </div>
                 </div>
             </div>
 
-            <div className="absolute bottom-0 z-40 inset-x-0 h-60 bg-gradient-to-t from-white dark:from-black via-white dark:via-black to-transparent w-full pointer-events-none" />
-            <div className="absolute top-0 z-40 inset-x-0 h-60 bg-gradient-to-b from-white dark:from-black via-transparent to-transparent w-full pointer-events-none" />
+            <div className="absolute bottom-0 z-40 inset-x-0 h-60 bg-gradient-to-t from-white dark:from-background via-white dark:via-background to-transparent w-full pointer-events-none" />
+            <div className="absolute top-0 z-40 inset-x-0 h-60 bg-gradient-to-b from-white dark:from-background via-transparent to-transparent w-full pointer-events-none" />
         </div>
     );
 };
 
 export const SkeletonThree = () => {
     return (
-        <div className="relative flex flex-col items-start p-8 gap-10 h-full overflow-hidden bg-white dark:bg-neutral-900">
+        <div className="relative flex flex-col items-start p-8 gap-10 h-full overflow-hidden bg-white dark:bg-background">
             <div className="relative h-full w-full flex items-center justify-center">
-                <div className="h-[80%] w-[80%]">
+                <div className="h-full w-full">
                     <DotLottiePlayer src="/Accelerate%20your%20Testing.lottie" autoplay loop className="h-full w-full object-contain" />
                 </div>
             </div>
@@ -139,9 +139,9 @@ export const SkeletonThree = () => {
 
 export const SkeletonTwo = () => {
     return (
-        <div className="relative flex flex-col items-start p-8 gap-10 h-full overflow-hidden bg-white dark:bg-neutral-900">
+        <div className="relative flex flex-col items-start p-8 gap-10 h-full overflow-hidden bg-white dark:bg-background">
             <div className="relative h-full w-full flex items-center justify-center">
-                <div className="h-[60%] w-[60%]">
+                <div className="h-full w-full">
                     <DotLottiePlayer src="/AI%20animation.lottie" autoplay loop className="h-full w-full object-contain" />
                 </div>
             </div>

@@ -37,6 +37,7 @@
     "./password-reset-email": "./src/password-reset-email.tsx",
     "./revoked-invitation-email": "./src/revoked-invitation-email.tsx",
     "./verify-email-address-email": "./src/verify-email-address-email.tsx",
-    "./welcome-email": "./src/welcome-email.tsx"
+    "./welcome-email": "./src/welcome-email.tsx",
+    "./contact-email": "./src/contact-email.tsx"
   }
 }
