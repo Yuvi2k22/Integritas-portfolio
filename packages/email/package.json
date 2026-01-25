@@ -44,6 +44,7 @@
     "./send-password-reset-email": "./src/send-password-reset-email.ts",
     "./send-revoked-invitation-email": "./src/send-revoked-invitation-email.ts",
     "./send-verify-email-address-email": "./src/send-verify-email-address-email.ts",
-    "./send-welcome-email": "./src/send-welcome-email.ts"
+    "./send-welcome-email": "./src/send-welcome-email.ts",
+    "./send-contact-email": "./src/send-contact-email.ts"
   }
 }

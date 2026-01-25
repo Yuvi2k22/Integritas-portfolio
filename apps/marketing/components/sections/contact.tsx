@@ -14,9 +14,42 @@ import { GridSection } from '~/components/fragments/grid-section';
 import { SiteHeading } from '~/components/fragments/site-heading';
 
 export function Contact(): React.JSX.Element {
-  const handleSendMessage = (): void => {
-    toast.error("I'm not implemented yet.");
+  const [loading, setLoading] = React.useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      firstName: formData.get('firstname'),
+      lastName: formData.get('lastname'),
+      email: formData.get('email'),
+      message: formData.get('message')
+    };
+
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      toast.success('Message sent successfully!');
+      (e.target as HTMLFormElement).reset();
+    } catch (error) {
+      toast.error('Failed to send message. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
+
   return (
     <GridSection>
       <div className="container space-y-20 py-20">
@@ -46,62 +79,71 @@ export function Contact(): React.JSX.Element {
                 <div className="flex flex-col items-center gap-3 lg:items-start">
                   <ContactInfo
                     icon={PhoneIcon}
-                    text="(123) 34567890"
+                    text="+91 6379184959"
                   />
                   <ContactInfo
                     icon={MailIcon}
-                    text="your-email@example.com"
-                  />
-                  <ContactInfo
-                    icon={MapPinIcon}
-                    text="123 Main St, City, Country"
+                    text="integritassolutions457@gmail.com"
                   />
                 </div>
               </div>
             </div>
             <Card className="order-1 mx-auto w-full max-w-lg shadow-lg lg:order-2 lg:w-1/2">
               <CardContent className="flex flex-col gap-6 p-6 lg:p-10">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="col-span-2 grid w-full items-center gap-1.5 sm:col-span-1">
-                    <Label htmlFor="firstname">First Name</Label>
-                    <Input
-                      id="firstname"
-                      type="text"
-                      placeholder="John"
-                    />
-                  </div>
-                  <div className="col-span-2 grid w-full items-center gap-1.5 sm:col-span-1">
-                    <Label htmlFor="lastname">Last Name</Label>
-                    <Input
-                      id="lastname"
-                      type="text"
-                      placeholder="Doe"
-                    />
-                  </div>
-                </div>
-                <div className="grid w-full items-center gap-1.5">
-                  <Label htmlFor="email">Email</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="johndoe@example.com"
-                  />
-                </div>
-                <div className="grid w-full gap-1.5">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea
-                    id="message"
-                    placeholder="Type your message here."
-                    rows={6}
-                  />
-                </div>
-                <Button
-                  type="button"
-                  className="w-full"
-                  onClick={handleSendMessage}
+                <form
+                  onSubmit={handleSubmit}
+                  className="grid gap-6"
                 >
-                  Send message
-                </Button>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="col-span-2 grid w-full items-center gap-1.5 sm:col-span-1">
+                      <Label htmlFor="firstname">First Name</Label>
+                      <Input
+                        id="firstname"
+                        name="firstname"
+                        type="text"
+                        placeholder="John"
+                        required
+                      />
+                    </div>
+                    <div className="col-span-2 grid w-full items-center gap-1.5 sm:col-span-1">
+                      <Label htmlFor="lastname">Last Name</Label>
+                      <Input
+                        id="lastname"
+                        name="lastname"
+                        type="text"
+                        placeholder="Doe"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="grid w-full items-center gap-1.5">
+                    <Label htmlFor="email">Email</Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="johndoe@example.com"
+                      required
+                    />
+                  </div>
+                  <div className="grid w-full gap-1.5">
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      placeholder="Type your message here."
+                      rows={6}
+                      required
+                    />
+                  </div>
+                  <Button
+                    type="submit"
+                    className="w-full"
+                    disabled={loading}
+                  >
+                    {loading ? 'Sending...' : 'Send message'}
+                  </Button>
+                </form>
               </CardContent>
             </Card>
           </div>
