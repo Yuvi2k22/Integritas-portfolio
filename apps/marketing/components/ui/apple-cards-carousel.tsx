@@ -71,13 +71,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
     const handleCardClose = (index: number) => {
         if (carouselRef.current) {
-            const cardWidth = isMobile() ? 230 : 384; // (md:w-96)
-            const gap = isMobile() ? 4 : 8;
-            const scrollPosition = (cardWidth + gap) * (index + 1);
-            carouselRef.current.scrollTo({
-                left: scrollPosition,
-                behavior: "smooth",
-            });
+            // Removed automatic scrolling logic to prevent layout shift
             setCurrentIndex(index);
         }
     };
@@ -273,6 +267,7 @@ export const BlurImage = ({
     src,
     className,
     alt,
+    fill,
     ...rest
 }: ImageProps) => {
     const [isLoading, setLoading] = useState(true);
@@ -289,7 +284,6 @@ export const BlurImage = ({
             height={height}
             loading="lazy"
             decoding="async"
-            blurDataURL={typeof src === "string" ? src : undefined}
             alt={alt ? alt : "Background of a beautiful view"}
             {...rest}
         />
