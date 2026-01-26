@@ -26,7 +26,7 @@ import { MobileMenu } from '~/components/mobile-menu';
 export function Navbar(): React.JSX.Element {
   const pathname = usePathname();
   return (
-    <section className="sticky inset-x-0 top-0 z-40 border-b py-4" style={{ backgroundColor: 'var(--background)' }}>
+    <section className="sticky inset-x-0 top-0 z-50 border-b py-4" style={{ backgroundColor: 'var(--background)' }}>
       <div className="container">
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-x-9">

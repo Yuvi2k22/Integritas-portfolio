@@ -92,7 +92,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                 >
                     <div
                         className={cn(
-                            "absolute right-0 z-[1000] h-auto w-[5%] overflow-hidden bg-gradient-to-l",
+                            "absolute right-0 z-20 h-auto w-[5%] overflow-hidden bg-gradient-to-l",
                         )}
                     ></div>
 
@@ -128,14 +128,14 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                 </div>
                 <div className="mr-10 flex justify-end gap-2">
                     <button
-                        className="relative z-40 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50"
+                        className="relative z-30 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50"
                         onClick={scrollLeft}
                         disabled={!canScrollLeft}
                     >
                         <IconArrowNarrowLeft className="h-6 w-6 text-gray-500" />
                     </button>
                     <button
-                        className="relative z-40 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50"
+                        className="relative z-30 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50"
                         onClick={scrollRight}
                         disabled={!canScrollRight}
                     >
